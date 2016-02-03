@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile gradleApi()
+}
+
+apply plugin: 'maven'
+
+group='org.sayan.home'
+version='1.0.0-SNAPSHOT'
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: uri('../../Maven/repo'))
+		}
+	}
+}
